@@ -5,9 +5,13 @@ export default class DemoContent extends Component {
         return (
             <React.Fragment>
                 <h1>This is a test Heading</h1>
-                <h2>Sub Heading</h2>
-                <p>This is a paragraph</p>
+
+                <p>Silent and endless. The stars shine like the love of God...cold and remote. Against them drifts a tiny chip of technology.</p>
+                <p><strong>CLOSER SHOT</strong> It is the NARCISSUS, lifeboat of the ill-fated star-freighter Nostromo. Without interior or running lights it seems devoid of life. The PING of a RANGING RADAR grows louder, closer. A shadow engulfs the Narcissus. Searchlights flash on, playing over the tiny ship, as a MASSIVE DARK HULL descends toward it.</p>
                 <blockquote>This is a blockquote</blockquote>
+                <pre>
+                    This is formatted
+                </pre>
                 <ul>
                     <li>Unordered Item 1</li>
                     <li>Unordered Item 2</li>

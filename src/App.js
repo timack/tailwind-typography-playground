@@ -47,8 +47,8 @@ export default class App extends Component {
             ))}
           </div>
         </div>
-        <div className="bg-white col-span-9 rounded shadow-xl py-6 px-20 overflow-scroll">
-          <article className={`prose ${this.state.proseSize}`}>
+        <div className="bg-white col-span-9 rounded shadow-xl py-12 px-20 overflow-scroll">
+          <article className={`mx-auto prose ${this.state.proseSize}`}>
             <DemoContent />
           </article>
         </div>
