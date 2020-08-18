@@ -4,15 +4,29 @@ import "./styles/app.css";
 import DemoContent from "./DemoContent";
 
 export default class App extends Component {
+
+  componentDidMount() {
+    // Load font list from google
+  }
+
+
   state = {
     proseSize: "",
+    disableMaxWidth: false
   };
 
   handleSizeClick = (size) => {
     this.setState({
-      proseSize: size,
+      proseSize: size
     });
   };
+
+  handleMaxWidthClick = () => {
+    this.setState({
+      disableMaxWidth: !this.state.disableMaxWidth
+    });
+  }
+
 
   render() {
     const sizeOptions = [
@@ -46,9 +60,27 @@ export default class App extends Component {
               </button>
             ))}
           </div>
+          <h4 className="uppercase text-gray-600 font-semibold text-sm tracking-widest">
+            Font
+          </h4>
+          <div>
+              <select name="" id="">
+                <option value="">Font Name</option>
+                <option value="">Font Name</option>
+                <option value="">Font Name</option>
+                <option value="">Font Name</option>
+              </select>
+          </div>
+          <h4 className="uppercase text-gray-600 font-semibold text-sm tracking-widest">
+            Remove Max-Width
+          </h4>
+          <div>
+              <label htmlFor="">Disable Max Width</label>
+              <input type="checkbox" name="" id="" checked={this.state.disableMaxWidth} onChange={this.handleMaxWidthClick} />
+          </div>
         </div>
         <div className="bg-white col-span-9 rounded shadow-xl py-12 px-20 overflow-scroll">
-          <article className={`mx-auto prose ${this.state.proseSize}`}>
+          <article className={`mx-auto prose ${this.state.proseSize} ${this.state.disableMaxWidth ? 'max-w-none' : ''}`}>
             <DemoContent />
           </article>
         </div>
