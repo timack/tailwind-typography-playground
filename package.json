@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tailwindcss/typography": "^0.2.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -16,12 +17,9 @@
   "scripts": {
     "build:tailwind": "tailwind build src/styles/app.scss -o src/styles/app.css",
     "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/styles/app.css -c 'npm run build:tailwind'",
-
     "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
     "start:react": "react-scripts start",
-
     "prebuild": "run-s build:tailwind",
-
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
