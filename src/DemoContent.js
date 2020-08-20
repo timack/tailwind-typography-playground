@@ -11,6 +11,16 @@ export default class DemoContent extends Component {
 
                 <img src="/images/aliens-film-wallpaper-full-hd-1080p-149017.jpg" alt=""/>
 
+                <h3>Contents</h3>
+
+                <ol>
+                    <li><a href="">Synopsis</a></li>
+                    <li><a href="">Script</a></li>
+                    <li><a href="">Awards</a></li>
+                    <li><a href="">Cast</a></li>
+                </ol>
+
+
                 <h3>Synopsis</h3>
 
                 <p>57 years after Ellen Ripley had a close encounter with the reptilian alien creature from the first movie, she is called back, this time, to help a group of highly trained colonial marines fight off against the sinister extraterrestrials. But this time, the aliens have taken over a space colony on the moon LV-426. When the colonial marines are called upon to search the deserted space colony, they later find out that they are up against more than what they bargained for. Using specially modified machine guns and enough firepower, it's either fight or die as the space marines battle against the aliens. As the Marines do their best to defend themselves, Ripley must attempt to protect a young girl who is the sole survivor of the decimated space colony.</p>
@@ -36,16 +46,36 @@ over the tiny ship, as a MASSIVE DARK HULL descends
 toward it.
                 </pre>
 
+                <h3>Awards</h3>
+
                 <ul>
-                    <li>Unordered Item 1</li>
-                    <li>Unordered Item 2</li>
-                    <li>Unordered Item 3</li>
+                    <li>
+                        <strong>Academy Awards</strong>
+                        <ul>
+                            <li>Sound Effects Editing</li>
+                            <li>Visual Effects</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>BAFTA</strong>
+                        <ul>
+                            <li>Visual Effects</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Saturns</strong>
+                        <ul>
+                            <li>Best Science Fiction Film</li>
+                            <li>Best Actress (Sigourney Weaver)</li>
+                            <li>Best Supporting Actor (Bill Paxton)</li>
+                            <li>Best Supporting Actress (Jeanette Goldstein)</li>
+                            <li>Best Performance by a Younger Actor (Carrie Henn)</li>
+                            <li>Best Direction (James Cameron)</li>
+                            <li>Best Writing (James Cameron)</li>
+                            <li>Best Special Effects</li>
+                        </ul>
+                    </li>
                 </ul>
-                <ol>
-                    <li>Ordered Item 1</li>
-                    <li>Ordered Item 2</li>
-                    <li>Ordered Item 3</li>
-                </ol>
 
                 <h3>Cast</h3>
                 <table>
