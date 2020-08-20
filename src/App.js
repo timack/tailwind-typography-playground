@@ -35,8 +35,8 @@ export default class App extends Component {
     ];
 
     return (
-      <div className="bg-gray-400 grid grid-cols-12 gap-12 p-12 h-screen">
-        <div className="bg-white col-span-3 rounded shadow-xl p-6">
+      <div className="grid grid-cols-12 gap-12 p-12 h-screen bg-gradient-to-r from-green-300 via-yellow-200 to-red-400">
+        <div className="bg-white col-span-3 rounded-lg shadow-xl p-6">
           <h3 className="mb-3 uppercase text-gray-700 font-semibold text-base tracking-widest">
             Configure
           </h3>
@@ -84,7 +84,7 @@ export default class App extends Component {
             />
           </div>
         </div>
-        <div className="bg-white col-span-9 rounded shadow-xl py-12 px-20 overflow-scroll">
+        <div className="bg-white col-span-9 rounded-lg shadow-xl py-12 px-20 overflow-scroll">
           <article
             className={`mx-auto prose ${this.state.proseSize} ${
               this.state.disableMaxWidth ? "max-w-none" : ""
