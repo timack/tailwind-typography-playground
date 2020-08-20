@@ -3,15 +3,37 @@ import "./styles/app.css";
 
 import DemoContent from "./DemoContent";
 
+const axios = require("axios").default;
+
 export default class App extends Component {
-  componentDidMount() {
-    // Load font list from google
-  }
 
   state = {
     proseSize: "",
     disableMaxWidth: false,
+    fonts: [],
   };
+
+
+
+  componentDidMount() {
+    // Load font list from google
+    const _self = this;
+
+    axios
+      .get(
+        "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyD62E9TC6q-LYMkBa-mnH6iKZxSfYVjKiI"
+      )
+      .then(function (response) {
+        _self.setState({
+          fonts: response.data.items,
+        });
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+        alert("Sorry... looks like there was a problem loading the font list");
+      });
+  }
 
   handleSizeClick = (size) => {
     this.setState({
@@ -64,10 +86,12 @@ export default class App extends Component {
           </h4>
           <div>
             <select name="" id="">
-              <option value="">Font Name</option>
-              <option value="">Font Name</option>
-              <option value="">Font Name</option>
-              <option value="">Font Name</option>
+              <option value="">Default</option>
+              {this.state.fonts.map((font, idx) => (
+                <option key={idx} value="">
+                  {font.family}
+                </option>
+              ))}
             </select>
           </div>
           <h4 className="uppercase text-gray-600 font-semibold text-sm tracking-widest">
