@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
 
 export default class DemoContent extends Component {
@@ -14,23 +15,24 @@ export default class DemoContent extends Component {
                 <h3>Contents</h3>
 
                 <ol>
-                    <li><a href="">Synopsis</a></li>
-                    <li><a href="">Script</a></li>
-                    <li><a href="">Awards</a></li>
-                    <li><a href="">Cast</a></li>
+                    <li><a href="#synopsis">Synopsis</a></li>
+                    <li><a href="#script">Script</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                    <li><a href="#cast">Cast</a></li>
                 </ol>
 
 
-                <h3>Synopsis</h3>
+                <h3 id="synopsis">Synopsis</h3>
 
                 <p>57 years after Ellen Ripley had a close encounter with the reptilian alien creature from the first movie, she is called back, this time, to help a group of highly trained colonial marines fight off against the sinister extraterrestrials. But this time, the aliens have taken over a space colony on the moon LV-426. When the colonial marines are called upon to search the deserted space colony, they later find out that they are up against more than what they bargained for. Using specially modified machine guns and enough firepower, it's either fight or die as the space marines battle against the aliens. As the Marines do their best to defend themselves, Ripley must attempt to protect a young girl who is the sole survivor of the decimated space colony.</p>
+                <p>Find out more on <a href="https://www.imdb.com/title/tt0090605" target="_blank" rel="noopener noreferrer">IMDB.com</a></p>
 
                 <blockquote>
                     <p><strong>Burke:</strong> Hold on, hold on just a second. This installation has a substantial dollar value attached to it.</p>
                     <p><strong>Ripley:</strong> They can *bill* me.</p>
                 </blockquote>
 
-                <h3>Script</h3>
+                <h3 id="script">Script</h3>
 
                 <pre style={{whiteSpace: 'pre-wrap'}}>
 Silent and endless.  The stars shine like the love of
@@ -46,7 +48,7 @@ over the tiny ship, as a MASSIVE DARK HULL descends
 toward it.
                 </pre>
 
-                <h3>Awards</h3>
+                <h3 id="awards">Awards</h3>
 
                 <ul>
                     <li>
@@ -77,7 +79,7 @@ toward it.
                     </li>
                 </ul>
 
-                <h3>Cast</h3>
+                <h3 id="cast">Cast</h3>
                 <table>
                     <thead>
                         <tr>
@@ -100,6 +102,7 @@ toward it.
                         </tr>
                     </tbody>
                 </table>
+
             </React.Fragment>
         )
     }
