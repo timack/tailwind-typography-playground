@@ -2,17 +2,24 @@
 import React, { Component } from 'react'
 
 export default class DemoContent extends Component {
+
     render() {
+
+        const { headingFont, bodyFont } = this.props;
+
         return (
-            <React.Fragment>
+            <div style={{fontFamily: bodyFont}}>
 
-                <h1>Aliens</h1>
+                <h1 style={{fontFamily: headingFont}}>Aliens</h1>
 
-                <h2>The greatest movie of all time.</h2>
+                <figure>
+                    <img src="/images/aliens-film-wallpaper-full-hd-1080p-149017.jpg" alt=""/>
+                    <figcaption>Ripely (Sigourney Weaver) gets a shooting lesson from Corporal Hicks (Michael Biehn).</figcaption>
+                </figure>
 
-                <img src="/images/aliens-film-wallpaper-full-hd-1080p-149017.jpg" alt=""/>
+                <h2 style={{fontFamily: headingFont}}>The greatest movie of all time.</h2>
 
-                <h3>Contents</h3>
+                <h3 style={{fontFamily: headingFont}}>Contents</h3>
 
                 <ol>
                     <li><a href="#synopsis">Synopsis</a></li>
@@ -22,7 +29,7 @@ export default class DemoContent extends Component {
                 </ol>
 
 
-                <h3 id="synopsis">Synopsis</h3>
+                <h3 style={{fontFamily: headingFont}} id="synopsis">Synopsis</h3>
 
                 <p>57 years after Ellen Ripley had a close encounter with the reptilian alien creature from the first movie, she is called back, this time, to help a group of highly trained colonial marines fight off against the sinister extraterrestrials. But this time, the aliens have taken over a space colony on the moon LV-426. When the colonial marines are called upon to search the deserted space colony, they later find out that they are up against more than what they bargained for. Using specially modified machine guns and enough firepower, it's either fight or die as the space marines battle against the aliens. As the Marines do their best to defend themselves, Ripley must attempt to protect a young girl who is the sole survivor of the decimated space colony.</p>
                 <p>Find out more on <a href="https://www.imdb.com/title/tt0090605" target="_blank" rel="noopener noreferrer">IMDB.com</a></p>
@@ -32,7 +39,7 @@ export default class DemoContent extends Component {
                     <p><strong>Ripley:</strong> They can *bill* me.</p>
                 </blockquote>
 
-                <h3 id="script">Script</h3>
+                <h3 style={{fontFamily: headingFont}} id="script">Script</h3>
 
                 <pre style={{whiteSpace: 'pre-wrap'}}>
 Silent and endless.  The stars shine like the love of
@@ -48,7 +55,7 @@ over the tiny ship, as a MASSIVE DARK HULL descends
 toward it.
                 </pre>
 
-                <h3 id="awards">Awards</h3>
+                <h3 style={{fontFamily: headingFont}} id="awards">Awards</h3>
 
                 <ul>
                     <li>
@@ -79,7 +86,7 @@ toward it.
                     </li>
                 </ul>
 
-                <h3 id="cast">Cast</h3>
+                <h3 style={{fontFamily: headingFont}} id="cast">Cast</h3>
                 <table>
                     <thead>
                         <tr>
@@ -103,7 +110,7 @@ toward it.
                     </tbody>
                 </table>
 
-            </React.Fragment>
+            </div>
         )
     }
 }
