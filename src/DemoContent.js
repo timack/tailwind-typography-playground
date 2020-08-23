@@ -19,16 +19,6 @@ export default class DemoContent extends Component {
 
                 <h2 style={{fontFamily: headingFont}}>The greatest movie of all time.</h2>
 
-                <h3 style={{fontFamily: headingFont}}>On This Page</h3>
-
-                <ol>
-                    <li><a href="#synopsis">Synopsis</a></li>
-                    <li><a href="#script">Script</a></li>
-                    <li><a href="#awards">Awards</a></li>
-                    <li><a href="#cast">Cast</a></li>
-                </ol>
-
-
                 <h3 style={{fontFamily: headingFont}} id="synopsis">Synopsis</h3>
 
                 <p>57 years after Ellen Ripley had a close encounter with the reptilian alien creature from the first movie, she is called back, this time, to help a group of highly trained colonial marines fight off against the sinister extraterrestrials. But this time, the aliens have taken over a space colony on the moon LV-426. When the colonial marines are called upon to search the deserted space colony, they later find out that they are up against more than what they bargained for. Using specially modified machine guns and enough firepower, it's either fight or die as the space marines battle against the aliens. As the Marines do their best to defend themselves, Ripley must attempt to protect a young girl who is the sole survivor of the decimated space colony.</p>

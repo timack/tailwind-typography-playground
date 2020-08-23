@@ -28,7 +28,7 @@ export default class App extends Component {
       .then(function (response) {
         _self.setState({
           fonts: response.data.items,
-          fontLoading: false
+          fontLoading: false,
         });
       })
       .catch(function (error) {
@@ -52,15 +52,14 @@ export default class App extends Component {
 
   handleFontChange = (type, e) => {
     this.setState({
-      fontLoading: true
-    })
+      fontLoading: true,
+    });
 
     let fontName = e.target.value;
     let updateObj = {
-      fontLoading: false
+      fontLoading: false,
     };
     updateObj[type] = fontName;
-
 
     if (fontName === "") {
       this.setState(updateObj);
@@ -92,7 +91,7 @@ export default class App extends Component {
     return (
       <div className="grid grid-cols-12 gap-12 p-12 h-screen bg-gray-200">
         <div className="bg-white col-span-3 shadow p-6 relative">
-        {fontLoading && (
+          {fontLoading && (
             <div className="absolute top-0 right-0 mt-3 mr-3 px-3 py-1 bg-yellow-300 text-yellow-700 flex items-center">
               <svg
                 viewBox="0 0 20 20"
@@ -206,6 +205,17 @@ export default class App extends Component {
               />
               <label htmlFor="disableMaxWidth">Disable Max Width</label>
             </div>
+          </div>
+
+          <div className="absolute bottom-0">
+            <p className="text-cente pb-3 text-xs text-gray-700">
+              <a href="https://github.com/timack/tailwind-typography-playground/issues"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Feedback?
+              </a>
+            </p>
           </div>
         </div>
 
