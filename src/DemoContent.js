@@ -14,12 +14,12 @@ export default class DemoContent extends Component {
 
                 <figure>
                     <img src="/images/aliens-film-wallpaper-full-hd-1080p-149017.jpg" alt=""/>
-                    <figcaption>Ripely (Sigourney Weaver) gets a shooting lesson from Corporal Hicks (Michael Biehn).</figcaption>
+                    <figcaption>Ripley (Sigourney Weaver) gets a shooting lesson from Corporal Hicks (Michael Biehn).</figcaption>
                 </figure>
 
                 <h2 style={{fontFamily: headingFont}}>The greatest movie of all time.</h2>
 
-                <h3 style={{fontFamily: headingFont}}>Contents</h3>
+                <h3 style={{fontFamily: headingFont}}>On This Page</h3>
 
                 <ol>
                     <li><a href="#synopsis">Synopsis</a></li>
@@ -106,6 +106,18 @@ toward it.
                         <tr>
                             <td>Michael Biehn</td>
                             <td>Corporal Hicks</td>
+                        </tr>
+                        <tr>
+                            <td>Paul Reiser</td>
+                            <td>Burke</td>
+                        </tr>
+                        <tr>
+                            <td>Lance Henriksen</td>
+                            <td>Bishop</td>
+                        </tr>
+                        <tr>
+                            <td>Bill Paxton</td>
+                            <td>Private Hudson</td>
                         </tr>
                     </tbody>
                 </table>
