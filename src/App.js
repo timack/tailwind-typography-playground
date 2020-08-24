@@ -89,7 +89,7 @@ export default class App extends Component {
     const { fontLoading } = this.state;
 
     return (
-      <div className="grid grid-cols-12 gap-12 p-12 h-screen bg-gray-200">
+      <div className="grid grid-cols-1 md:grid-cols-12 md:gap-12 md:p-12 h-screen bg-gray-200">
         <div className="bg-white col-span-3 shadow p-6 relative">
           {fontLoading && (
             <div className="absolute top-0 right-0 mt-3 mr-3 px-3 py-1 bg-yellow-300 text-yellow-700 flex items-center">
@@ -220,7 +220,7 @@ export default class App extends Component {
         </div>
 
         {/* Example page */}
-        <div className="bg-white col-span-9 shadow py-12 px-20 overflow-scroll relative">
+        <div className="bg-white col-span-9 shadow py-12 px-6 md:px-20 md:overflow-scroll relative">
           <article
             className={`mx-auto prose ${this.state.proseSize} ${
               this.state.disableMaxWidth ? "max-w-none" : ""
