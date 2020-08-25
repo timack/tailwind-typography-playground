@@ -21,7 +21,8 @@ export default class DemoContent extends Component {
 
                 <h3 style={{fontFamily: headingFont}} id="synopsis">Synopsis</h3>
 
-                <p>57 years after Ellen Ripley had a close encounter with the reptilian alien creature from the first movie, she is called back, this time, to help a group of highly trained colonial marines fight off against the sinister extraterrestrials. But this time, the aliens have taken over a space colony on the moon LV-426. When the colonial marines are called upon to search the deserted space colony, they later find out that they are up against more than what they bargained for. Using specially modified machine guns and enough firepower, it's either fight or die as the space marines battle against the aliens. As the Marines do their best to defend themselves, Ripley must attempt to protect a young girl who is the sole survivor of the decimated space colony.</p>
+                <p>57 years after Ellen Ripley had a close encounter with the reptilian alien creature from the first movie, she is called back, this time, to help a group of highly trained colonial marines fight off against the sinister extraterrestrials. But this time, the aliens have taken over a space colony on the moon LV-426.</p>
+                <p>When the colonial marines are called upon to search the deserted space colony, they later find out that they are up against more than what they bargained for. <strong>Using specially modified machine guns and enough firepower, it's either fight or die as the space marines battle against the aliens.</strong> As the Marines do their best to defend themselves, Ripley must attempt to protect a young girl who is the sole survivor of the decimated space colony.</p>
                 <p>Find out more on <a href="https://www.imdb.com/title/tt0090605" target="_blank" rel="noopener noreferrer">IMDB.com</a></p>
 
                 <blockquote>
