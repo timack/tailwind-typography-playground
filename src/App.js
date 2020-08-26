@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import WebFont from "webfontloader";
+import Select from "react-select";
 
 import "./styles/app.css";
 
@@ -27,7 +28,15 @@ export default class App extends Component {
       )
       .then(function (response) {
         _self.setState({
-          fonts: response.data.items,
+          fonts: [{
+            label: 'Default',
+            family: '',
+            value: ''
+          }, ...response.data.items.map((font) => {
+            font.label = font.family;
+            font.value = font.family;
+            return font;
+          })],
           fontLoading: false,
         });
       })
@@ -50,12 +59,13 @@ export default class App extends Component {
     });
   };
 
-  handleFontChange = (type, e) => {
+  handleFontChange = (type, font) => {
     this.setState({
       fontLoading: true,
     });
 
-    let fontName = e.target.value;
+    const fontName = font.family;
+
     let updateObj = {
       fontLoading: false,
     };
@@ -63,6 +73,7 @@ export default class App extends Component {
 
     if (fontName === "") {
       this.setState(updateObj);
+      return;
     }
 
     const _self = this;
@@ -86,7 +97,7 @@ export default class App extends Component {
       { display: "XXL", class: "prose-2xl" },
     ];
 
-    const { fontLoading } = this.state;
+    const { fontLoading, fonts } = this.state;
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-12 md:gap-12 md:p-12 h-screen bg-gray-200">
@@ -129,67 +140,25 @@ export default class App extends Component {
           </div>
 
           <div className="py-2">
-            <h4 className="font-semibold text-sm pb-1">Body Font</h4>
-            <div className="relative">
-              <select
-                name="fontSelection"
-                id="fontSelection"
-                className="w-full border border-gray-500 p-3 appearance-none"
-                onChange={(e) => this.handleFontChange("bodyFont", e)}
-              >
-                <option value="">Default</option>
-                {this.state.fonts.map((font, idx) => (
-                  <option key={idx} value={font.family}>
-                    {font.family}
-                  </option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 pr-3 right-0 top-0 flex items-center">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="fill-current w-6 h-6"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
+            <label htmlFor="bodyFontSelect" className="font-semibold text-sm pb-1">Body Font</label>
+            <Select
+              id="bodyFontSelect"
+              name="bodyFontSelect"
+              options={fonts}
+              isSearchable={true}
+              onChange={value => this.handleFontChange("bodyFont", value)}
+            />
           </div>
 
           <div className="py-2">
-            <h4 className="font-semibold text-sm pb-1">Heading Font</h4>
-            <div className="relative">
-              <select
-                name="fontSelection"
-                id="fontSelection"
-                className="w-full border border-gray-500 p-3 appearance-none"
-                onChange={(e) => this.handleFontChange("headingFont", e)}
-              >
-                <option value="">Default</option>
-                {this.state.fonts.map((font, idx) => (
-                  <option key={idx} value={font.family}>
-                    {font.family}
-                  </option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 pr-3 right-0 top-0 flex items-center">
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="fill-current w-6 h-6"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
+            <label className="font-semibold text-sm pb-1">Heading Font</label>
+            <Select
+              id="headingFontSelect"
+              name="headingFontSelect"
+              options={fonts}
+              isSearchable={true}
+              onChange={value => this.handleFontChange("headingFont", value)}
+            />
           </div>
 
           <div className="py-2">
@@ -209,7 +178,8 @@ export default class App extends Component {
 
           <div className="absolute bottom-0">
             <p className="text-cente pb-3 text-xs text-gray-700">
-              <a href="https://github.com/timack/tailwind-typography-playground/issues"
+              <a
+                href="https://github.com/timack/tailwind-typography-playground/issues"
                 target="_blank"
                 rel="noopener noreferrer"
               >
