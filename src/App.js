@@ -144,6 +144,8 @@ export default class App extends Component {
             <Select
               id="bodyFontSelect"
               name="bodyFontSelect"
+              className="react-select-container"
+              classNamePrefix="react-select"
               options={fonts}
               isSearchable={true}
               onChange={value => this.handleFontChange("bodyFont", value)}
@@ -155,6 +157,8 @@ export default class App extends Component {
             <Select
               id="headingFontSelect"
               name="headingFontSelect"
+              className="react-select-container"
+              classNamePrefix="react-select"
               options={fonts}
               isSearchable={true}
               onChange={value => this.handleFontChange("headingFont", value)}

@@ -1845,7 +1845,42 @@ video {
   margin-bottom: 0;
 }
 
-@import "components/react-select.scss";
+/* =========================================
+        React Select Styling
+========================================= */
+
+.react-select__control {
+  border-width: 1px !important;
+  --border-opacity: 1 !important;
+  border-color: #a0aec0 !important;
+  border-color: rgba(160, 174, 192, var(--border-opacity)) !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  border-radius: 0 !important;
+}
+
+.react-select__option {
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+}
+
+.react-select__option:hover {
+  --bg-opacity: 1 !important;
+  background-color: #e2e8f0 !important;
+  background-color: rgba(226, 232, 240, var(--bg-opacity)) !important;
+  --text-opacity: 1 !important;
+  color: #2d3748 !important;
+  color: rgba(45, 55, 72, var(--text-opacity)) !important;
+}
+
+.react-select__option.react-select__option--is-selected {
+  --bg-opacity: 1 !important;
+  background-color: #fefcbf !important;
+  background-color: rgba(254, 252, 191, var(--bg-opacity)) !important;
+  --text-opacity: 1 !important;
+  color: #975a16 !important;
+  color: rgba(151, 90, 22, var(--text-opacity)) !important;
+}
 
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;

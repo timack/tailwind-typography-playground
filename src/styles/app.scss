@@ -2,6 +2,24 @@
 
 @import "tailwindcss/components";
 
-@import "components/react-select.scss";
+/* =========================================
+        React Select Styling
+========================================= */
+
+.react-select__control {
+    @apply border border-gray-500 text-xs uppercase rounded-none !important;
+}
+
+.react-select__option {
+    @apply text-xs uppercase !important;
+}
+
+.react-select__option:hover {
+    @apply bg-gray-300 text-gray-800 !important;
+}
+
+.react-select__option.react-select__option--is-selected {
+    @apply bg-yellow-200 text-yellow-800 !important;
+}
 
 @import "tailwindcss/utilities";
