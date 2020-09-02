@@ -69,7 +69,7 @@ export default class App extends Component {
     let updateObj = {
       fontLoading: false,
     };
-    updateObj[type] = fontName;
+    updateObj[type] = font;
 
     if (fontName === "") {
       this.setState(updateObj);
@@ -80,7 +80,7 @@ export default class App extends Component {
 
     WebFont.load({
       google: {
-        families: [fontName],
+        families: [fontName + ':' + font.variants.join(',')],
       },
       active: () => {
         _self.setState(updateObj);
@@ -97,7 +97,7 @@ export default class App extends Component {
       { display: "XXL", class: "prose-2xl" },
     ];
 
-    const { fontLoading, fonts } = this.state;
+    const { fontLoading, fonts, headingFont } = this.state;
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-12 md:gap-12 md:p-12 h-screen bg-gray-200">
@@ -164,6 +164,28 @@ export default class App extends Component {
               onChange={value => this.handleFontChange("headingFont", value)}
             />
           </div>
+
+          {headingFont && (
+            <div className="py-2">
+              <label className="font-semibold text-sm pb-1" htmlFor="headingFontVariantSelect">Heading Variant</label>
+              <Select
+                id="headingFontVariantSelect"
+                name="headingFontVariantSelect"
+                className="react-select-container"
+                classNamePrefix="react-select"
+                options={headingFont.variants.map(variant => {
+                  return {
+                    name: variant,
+                    label: variant
+                  };
+                })}
+                isSearchable={true}
+                onChange={value => this.setState({
+                  headingFont: {...headingFont, variant: value.name }
+                })}
+              />
+            </div>
+          )}
 
           <div className="py-2">
             <h4 className="font-semibold text-sm pb-1">Remove Max-Width</h4>
