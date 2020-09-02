@@ -76,6 +76,13 @@ export default class App extends Component {
       return;
     }
 
+    font.variantsSelect = font.variants.map(variant => {
+      return {
+        name: variant,
+        label: variant
+      };
+    })
+
     const _self = this;
 
     WebFont.load({
@@ -173,12 +180,7 @@ export default class App extends Component {
                 name="headingFontVariantSelect"
                 className="react-select-container"
                 classNamePrefix="react-select"
-                options={headingFont.variants.map(variant => {
-                  return {
-                    name: variant,
-                    label: variant
-                  };
-                })}
+                options={headingFont.variantsSelect}
                 isSearchable={true}
                 onChange={value => this.setState({
                   headingFont: {...headingFont, variant: value.name }
