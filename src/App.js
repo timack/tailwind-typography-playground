@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import WebFont from "webfontloader";
 import Select from "react-select";
 
+import { bgColours } from './colours';
+
 import "./styles/app.css";
 
 import DemoContent from "./DemoContent";
@@ -16,6 +18,7 @@ export default class App extends Component {
     headingFont: "",
     bodyFont: "",
     fontLoading: true,
+    bgColor: 'bg-white'
   };
 
   componentDidMount() {
@@ -57,6 +60,12 @@ export default class App extends Component {
     this.setState({
       disableMaxWidth: !this.state.disableMaxWidth,
     });
+  };
+
+  handleBGColorChange = select => {
+    this.setState({
+      bgColor: select.value
+    })
   };
 
   handleFontChange = (type, font) => {
@@ -104,7 +113,7 @@ export default class App extends Component {
       { display: "XXL", class: "prose-2xl" },
     ];
 
-    const { fontLoading, fonts, headingFont } = this.state;
+    const { fontLoading, fonts, headingFont, bgColor } = this.state;
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-12 h-screen">
@@ -145,6 +154,20 @@ export default class App extends Component {
               ))}
             </div>
           </div>
+
+          <div className="py-2">
+            <label htmlFor="backgroundColorSelect" className="font-semibold text-sm pb-1">Background Colour</label>
+            <Select
+              id="backgroundColorSelect"
+              name="backgroundColorSelect"
+              className="react-select-container"
+              classNamePrefix="react-select"
+              options={bgColours}
+              isSearchable={true}
+              onChange={value => this.handleBGColorChange(value)}
+            />
+          </div>
+
 
           <div className="py-2">
             <label htmlFor="bodyFontSelect" className="font-semibold text-sm pb-1">Body Font</label>
@@ -218,7 +241,7 @@ export default class App extends Component {
         </div>
 
         {/* Example page */}
-        <div className="bg-white col-span-9 py-12 px-6 md:px-20 md:overflow-scroll relative">
+        <div className={`${bgColor} col-span-9 py-12 px-6 md:px-20 md:overflow-scroll relative`}>
           <article
             className={`mx-auto prose ${this.state.proseSize} ${
               this.state.disableMaxWidth ? "max-w-none" : ""
