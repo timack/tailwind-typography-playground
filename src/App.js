@@ -14,6 +14,7 @@ export default class App extends Component {
   state = {
     proseSize: "",
     disableMaxWidth: false,
+    displayControls: true,
     fonts: [],
     headingFont: "",
     bodyFont: "",
@@ -113,11 +114,11 @@ export default class App extends Component {
       { display: "XXL", class: "prose-2xl" },
     ];
 
-    const { fontLoading, fonts, headingFont, bgColor } = this.state;
+    const { fontLoading, fonts, headingFont, bgColor, displayControls } = this.state;
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-12 h-screen">
-        <div className="bg-white col-span-3 p-6 relative bg-gray-200 shadow-inner">
+        <div className={`bg-white col-span-3 p-6 relative bg-gray-200 shadow-inner ${displayControls ? 'block' : 'hidden'}`}>
           {fontLoading && (
             <div className="absolute top-0 right-0 mt-3 mr-3 px-3 py-1 bg-yellow-300 text-yellow-700 flex items-center">
               <svg
@@ -156,7 +157,12 @@ export default class App extends Component {
           </div>
 
           <div className="py-2">
-            <label htmlFor="backgroundColorSelect" className="font-semibold text-sm pb-1">Background Colour</label>
+            <label
+              htmlFor="backgroundColorSelect"
+              className="font-semibold text-sm pb-1"
+            >
+              Background Colour
+            </label>
             <Select
               id="backgroundColorSelect"
               name="backgroundColorSelect"
@@ -164,13 +170,17 @@ export default class App extends Component {
               classNamePrefix="react-select"
               options={bgColours}
               isSearchable={true}
-              onChange={value => this.handleBGColorChange(value)}
+              onChange={(value) => this.handleBGColorChange(value)}
             />
           </div>
 
-
           <div className="py-2">
-            <label htmlFor="bodyFontSelect" className="font-semibold text-sm pb-1">Body Font</label>
+            <label
+              htmlFor="bodyFontSelect"
+              className="font-semibold text-sm pb-1"
+            >
+              Body Font
+            </label>
             <Select
               id="bodyFontSelect"
               name="bodyFontSelect"
@@ -178,7 +188,7 @@ export default class App extends Component {
               classNamePrefix="react-select"
               options={fonts}
               isSearchable={true}
-              onChange={value => this.handleFontChange("bodyFont", value)}
+              onChange={(value) => this.handleFontChange("bodyFont", value)}
             />
           </div>
 
@@ -191,13 +201,18 @@ export default class App extends Component {
               classNamePrefix="react-select"
               options={fonts}
               isSearchable={true}
-              onChange={value => this.handleFontChange("headingFont", value)}
+              onChange={(value) => this.handleFontChange("headingFont", value)}
             />
           </div>
 
           {headingFont && (
             <div className="py-2">
-              <label className="font-semibold text-sm pb-1" htmlFor="headingFontVariantSelect">Heading Variant</label>
+              <label
+                className="font-semibold text-sm pb-1"
+                htmlFor="headingFontVariantSelect"
+              >
+                Heading Variant
+              </label>
               <Select
                 id="headingFontVariantSelect"
                 name="headingFontVariantSelect"
@@ -205,9 +220,11 @@ export default class App extends Component {
                 classNamePrefix="react-select"
                 options={headingFont.variantsSelect}
                 isSearchable={true}
-                onChange={value => this.setState({
-                  headingFont: {...headingFont, variant: value.name }
-                })}
+                onChange={(value) =>
+                  this.setState({
+                    headingFont: { ...headingFont, variant: value.name },
+                  })
+                }
               />
             </div>
           )}
@@ -241,7 +258,15 @@ export default class App extends Component {
         </div>
 
         {/* Example page */}
-        <div className={`${bgColor} col-span-9 py-12 px-6 md:px-20 md:overflow-scroll relative`}>
+        <div
+          className={`${bgColor} ${displayControls ? 'col-span-9' : 'col-span-12'} py-12 px-6 md:px-20 md:overflow-scroll relative`}
+        >
+          <button
+            onClick={() => this.setState({displayControls: !this.state.displayControls})}
+            title="Toggle Controls"
+            className="absolute hidden md:block left-0 ml-6 -mt-6 z-50 text-gray-500">
+              {displayControls ? '←' : '→'}
+          </button>
           <article
             className={`mx-auto prose ${this.state.proseSize} ${
               this.state.disableMaxWidth ? "max-w-none" : ""

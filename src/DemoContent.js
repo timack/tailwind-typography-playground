@@ -44,6 +44,7 @@ export default class DemoContent extends Component {
           <img
             src="/images/aliens-film-wallpaper-full-hd-1080p-149017.jpg"
             alt=""
+            className="rounded"
           />
           <figcaption>
             Ripley (Sigourney Weaver) gets a shooting lesson from Corporal Hicks
